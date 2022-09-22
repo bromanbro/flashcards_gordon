@@ -32,9 +32,9 @@ positional arguments:
   card_file      The text file of the deck.
 
 options:
-  -h, --help     show this help message and exit
-  -r, --reverse  Reverse question.
-  -s, --spaced   Run Leitner algorithm.
+  -h, --help     show this help message and exit   
+  -r, --reverse  Reverse question.   
+  -s, --spaced   Run Leitner algorithm.   
 
 ## For Your Consideration
 Flashcards Gordon has to persist some information to your machine so that it can keep track of your performance and weight cards for the spaced repetition algorithm.  Therefore the application will create data files for each of your decks located here:   
