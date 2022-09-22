@@ -31,7 +31,7 @@ usage: gordon [-h] [-r] [-s] card_file
 positional arguments:
   card_file      The text file of the deck.
 
-options:
+options:   
   -h, --help     show this help message and exit   
   -r, --reverse  Reverse question.   
   -s, --spaced   Run Leitner algorithm.   
