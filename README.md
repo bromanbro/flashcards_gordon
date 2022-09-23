@@ -11,7 +11,7 @@ Flashcards Gordon was developed because the world deserves a simple flashcard ap
 ## Getting Started
 Flashcards Gordon was developed for use at the Linux command line.  It may be compatible with Windows and Mac environments but this is untested at this time.
 
-You will need to make a deck of flashcards containing the information you wish to memorize.  This is very easy to do.  Your deck file is simply a plain text file.  Each line in the text file is a card where you put the text for the front of the card then three pound signs and the text for the back of the card.  Be careful not to leave any trailing spaces after each line.  When you you are quized the app will expect an answer that matches the line exactly, spaces and all.   
+You will need to make a deck of flashcards containing the information you wish to memorize.  This is very easy to do.  Your deck file is simply a plain text file.  Each line in the text file is a card where you put the text for the front of the card then three pound signs and the text for the back of the card.   
 
 In the example below I am learning esperanto.  I put the english phrase on one side and esperanto on the other.
 
