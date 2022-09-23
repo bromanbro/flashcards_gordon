@@ -6,7 +6,7 @@ Flashcards at the command line with advanced features including reversal and spa
 ## About The Project
 Flashcards Gordon was developed because the world deserves a simple flashcard application with powerful features available at the command line.  The decks you create are plain text files with each line representing a card and the text for the front and back separated by three pound signs.  Flashcards Gordon gives you all of the powerful features that you expect from a flashcard application.  
 * The reversal feature will quiz you by showing the backs of the cards and asking you to answer what the front is.  Very useful when learning a new language.
-* The spaced feature puts Flashcards Gordon in spaced repition mode where one third of the deck is pulled placing emphasis on the cards you are learning while giving lower priority to those already mastered.  This is an excellent feature to use two or three times throughout the day when you have five minutes to spare.
+* The spaced feature puts Flashcards Gordon in spaced repetition mode where one third of the deck is pulled placing emphasis on the cards you are learning while giving lower priority to those already mastered.  This is an excellent feature to use two or three times throughout the day when you have five minutes to spare.
 
 ## Getting Started
 Flashcards Gordon was developed for use at the Linux command line.  It may be compatible with Windows and Mac environments but this is untested at this time.
