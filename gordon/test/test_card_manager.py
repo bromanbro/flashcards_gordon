@@ -64,12 +64,12 @@ def deficient_db():
     db = {
         "question4": "0",
         "question5": "0",
-        "question6": "0",
-        "question7": "0",
-        "question8": "0",
-        "question9": "0",
-        "question10": "0",
-        "question11": "0",
+        "question6": "2",
+        "question7": "2",
+        "question8": "2",
+        "question9": "2",
+        "question10": "2",
+        "question11": "2",
         "question12": "2",
         "question13": "2",
         "question14": "2",
@@ -159,6 +159,24 @@ def test_get_cards_at_level_treats_missing_as_level_zero():
     result = get_cards_at_level(cards, {}, 0)
     assert len(result) == 3
 
+def test_get_cards_at_level_prefers_cards_seen(deficient_db):
+    cards = [
+        ("question1", "answer1"),
+        ("question2", "answer2"),
+        ("question3", "answer3"),
+        ("question4", "answer4"),
+        ("question5", "answer5"),
+        ("question6", "answer6"),
+    ]
+    result = get_cards_at_level(cards, deficient_db, 0)
+    print(result)
+    print(deficient_db["question6"])
+    assert result[0][0] == "question4"
+    assert result[1][0] == "question5"
+    assert result[2][0] == "question1"
+    assert result[3][0] == "question2"
+    assert result[4][0] == "question3"
+
 def test_load_review_cards_spaced(complex_db, mocker):
     mocker.patch("gordon.card_manager.shuffle", fake_shuffle)
     cards = load_review_cards(complex_db, "gordon/test/test_files/big.dek", True, False)
@@ -195,18 +213,18 @@ def test_load_review_cards_spaced_treats_missing_in_db_as_level_zero(deficient_d
     mocker.patch("gordon.card_manager.shuffle", fake_shuffle)
     cards = load_review_cards(deficient_db, "gordon/test/test_files/big.dek", True, False)
     #3 cards at level 0
-    assert cards[0][0] == "question1"
-    assert cards[1][0] == "question2"
-    assert cards[2][0] == "question3"
+    assert cards[0][0] == "question4"
+    assert cards[1][0] == "question5"
+    assert cards[2][0] == "question1"
 
 def test_load_review_cards_spaced_loads_from_next_tier(deficient_db, mocker):
     mocker.patch("gordon.card_manager.shuffle", fake_shuffle)
     cards = load_review_cards(deficient_db, "gordon/test/test_files/big.dek", True, False)
-    #2 cards at level 1 taken from level 2 because there are none left at 1
-    assert cards[3][0] == "question12"
-    assert cards[4][0] == "question13"
+    #2 cards at level 1 taken from level 2 because there are none at 1
+    assert cards[3][0] == "question6"
+    assert cards[4][0] == "question7"
     #1 card at level 2
-    assert cards[5][0] == "question14"
+    assert cards[5][0] == "question8"
     #1 card at level 3
     assert cards[6][0] == "question16"
 

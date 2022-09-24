@@ -4,7 +4,10 @@ def process_line(line, reverse):
     return line.strip().split('###')[::-1] if reverse else line.strip().split('###')
 
 def get_cards_at_level(cards, db, level):
-    return list(filter(lambda card: (card[0] not in db.keys() and level == 0) or (card[0] in db.keys() and int(db[card[0]]) == level), cards))
+    if level == 0:
+        return list(filter(lambda card: card[0] in db.keys() and db[card[0]] == "0", cards)) + list(filter(lambda card: card[0] not in db.keys(), cards))
+    else:
+        return list(filter(lambda card: card[0] in db.keys() and db[card[0]] == str(level), cards)) 
 
 def promote_card(db, card):
     if not card[0] in db.keys():
